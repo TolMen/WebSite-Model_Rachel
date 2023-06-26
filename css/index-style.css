@@ -9,13 +9,15 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Partie globale de la page */
+/* ------------------------------------------------------------------ */
+
+/* Global part of the page */
 
 section {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: radial-gradient(#333, #000);
+  background: radial-gradient(#333333, #000000);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -24,21 +26,25 @@ section {
 }
 
 section h2 {
-  color: #fff;
+  color: #ffffff;
   font-size: 8em;
   z-index: 1;
-  text-shadow: 0px 0px 10px #fff;
+  text-shadow: 0px 0px 10px #ffffff;
 }
 
 section p {
   flex-direction: column;
-  color: #fff;
+  color: #ffffff;
   font-size: 2em;
   font-family: "Source Code Pro", monospace;
   z-index: 1;
 }
 
-section .feuille {
+/* ------------------------------------------------------------------ */
+
+/* Part for the leaves */
+
+section .leaves {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -47,57 +53,57 @@ section .feuille {
   pointer-events: none;
 }
 
-section .feuille div {
+section .leaves div {
   position: absolute;
   display: block;
 }
 
-section .feuille div:nth-child(1) {
+section .leaves div:nth-child(1) {
   left: 20%;
-  animation: feuil-anim 15s linear infinite;
+  animation: leavesAnimation 15s linear infinite;
   animation-delay: -7s;
 }
 
-section .feuille div:nth-child(2) {
+section .leaves div:nth-child(2) {
   left: 50%;
-  animation: feuil-anim 20s linear infinite;
+  animation: leavesAnimation 20s linear infinite;
   animation-delay: -5s;
 }
 
-section .feuille div:nth-child(3) {
+section .leaves div:nth-child(3) {
   left: 70%;
-  animation: feuil-anim 20s linear infinite;
+  animation: leavesAnimation 20s linear infinite;
   animation-delay: 0s;
 }
 
-section .feuille div:nth-child(4) {
+section .leaves div:nth-child(4) {
   left: 0%;
-  animation: feuil-anim 15s linear infinite;
+  animation: leavesAnimation 15s linear infinite;
   animation-delay: -5s;
 }
 
-section .feuille div:nth-child(5) {
+section .leaves div:nth-child(5) {
   left: 85%;
-  animation: feuil-anim 18s linear infinite;
+  animation: leavesAnimation 18s linear infinite;
   animation-delay: -10s;
 }
 
-section .feuille div:nth-child(6) {
+section .leaves div:nth-child(6) {
   left: 0%;
-  animation: feuil-anim 12s linear infinite;
+  animation: leavesAnimation 12s linear infinite;
 }
 
-section .feuille div:nth-child(7) {
+section .leaves div:nth-child(7) {
   left: 15%;
-  animation: feuil-anim 14s linear infinite;
+  animation: leavesAnimation 14s linear infinite;
 }
 
-section .feuille div:nth-child(8) {
+section .leaves div:nth-child(8) {
   left: 60%;
-  animation: feuil-anim 15s linear infinite;
+  animation: leavesAnimation 15s linear infinite;
 }
 
-@keyframes feuil-anim {
+@keyframes leavesAnimation {
   0% {
     opacity: 0;
     top: -10%;
@@ -130,17 +136,19 @@ section .feuille div:nth-child(8) {
   }
 }
 
-.feuille2 {
+.leaves2 {
   transform: scale(2) rotateY(180deg);
   filter: blur(2px);
 }
 
-.feuille3 {
+.leaves3 {
   transform: scale(0.8) rotateX(180deg);
   filter: blur(4px);
 }
 
-/* Partie pour les boutons */
+/* ------------------------------------------------------------------ */
+
+/* Part for buttons */
 
 a {
   top: 25px;
@@ -148,7 +156,7 @@ a {
   display: inline-block;
   padding: 12px 36px;
   margin: 10px 0;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-size: 25px;
   letter-spacing: 2px;
@@ -162,7 +170,7 @@ a {
 
 span {
   position: absolute;
-  background: #fff;
+  background: #ffffff;
   transform: translate(-50%, -50%);
   pointer-events: none;
   border-radius: 50%;
@@ -183,34 +191,36 @@ span {
   }
 }
 
-/* Partie pour adapter aux différents écrans */
+/* ------------------------------------------------------------------ */
+
+/* Part to adapt to different screens */
 
 @media screen and (max-width: 600px) {
 
-section p {
-  font-size: 1.5em;
-}
+  section p {
+    font-size: 1.5em;
+  }
 
 }
 
 @media screen and (max-width: 510px) {
 
-section h2 {
-  font-size: 5em;
-}
+  section h2 {
+    font-size: 5em;
+  }
 
-section p {
-  font-size: 1.2em;
-}
+  section p {
+    font-size: 1.2em;
+  }
 
-a {
-  padding: 12px 36px;
-  margin: 10px 0;
-  font-size: 15px;
-}
+  a {
+    padding: 12px 36px;
+    margin: 10px 0;
+    font-size: 15px;
+  }
 
-.feuille2 {
-visibility: hidden;
-}
+  .leaves2 {
+    visibility: hidden;
+  }
 
 }
