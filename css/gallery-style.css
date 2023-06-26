@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000000;
+}
+
+/* ------------------------------------------------------------------ */
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: circle-img 45s linear infinite;
+}
+
+@keyframes circle-img {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(12deg);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateX(360deg) rotateY(12deg);
+  }
+}
+
+.circle span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(var(--i) * 45deg)) translateZ(300px);
+}
+
+.circle span img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Part for the button */
+
+a {
+  position: absolute;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 10px 0;
+  color: #000000;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  overflow: hidden;
+  top: 5px;
+  right: 15px;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Part to adapt to different screens */
+
+@media screen and (max-width: 700px) {
+  body {
+    background: rgb(1, 1, 1);
+  }
+
+  a {
+    font-size: 13px;
+  }
+
+  .circle {
+    width: 175px;
+    height: 175px;
+  }
+
+  .circle span {
+    transform: rotateX(calc(var(--i) * 45deg)) translateZ(225px);
+  }
+
+  .circle span img {
+    width: 90%;
+    height: 90%;
+  }
+}
